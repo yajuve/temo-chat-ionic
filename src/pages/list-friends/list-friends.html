@@ -22,16 +22,6 @@
         </ion-avatar>
         <h2>{{ friend.fullname }} <span ion-text color="light">({{ friend.username }})</span></h2>
       </ion-item>
-      <ion-item-options side="left">
-        <button ion-button color="primary">
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-        <button ion-button color="secondary">
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-      </ion-item-options>
       <ion-item-options side="right">
         <button ion-button color="primary" (click)="goToProfileFriend(sliding, friend)">
           <ion-icon name="person"></ion-icon>
