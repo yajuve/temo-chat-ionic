@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {HttpProvider} from "../../providers/http/http";
 
 /**
  * Generated class for the ListFriendsPage page.
@@ -15,11 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListFriendsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListFriendsPage');
+    this.http.get('friends.json').subscribe((resp) => {
+      console.log(resp);
+    }, (err) => {
+      console.error(err);
+    });
   }
 
 }
