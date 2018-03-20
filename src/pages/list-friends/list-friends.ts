@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
 import {HttpProvider} from "../../providers/http/http";
 import {Friend} from "../../models/user";
 import {Util} from "../../providers/util/util";
@@ -21,10 +21,11 @@ export class ListFriendsPage {
   public Util = Util;
   private friends: Friend[] = [];
 
-  constructor(public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
+  constructor(public menuCtrl: MenuController, public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
   }
 
   ionViewDidLoad() {
+    this.menuCtrl.enable(true);
     this.http.get('friends.json').subscribe((friends) => {
       this.friends = <Friend[]>friends;
     }, (err) => {
@@ -36,7 +37,7 @@ export class ListFriendsPage {
     sliding.close();
     this.navCtrl.push('ProfileFriendPage', {friend});
   }
-  
+
   goToChatRoom(friend: Friend) {
     this.navCtrl.push('ChatRoomPage', {friend});
   }

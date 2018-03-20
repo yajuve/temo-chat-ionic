@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, MenuController } from 'ionic-angular';
 
 import { User } from '../../providers/providers';
 
@@ -22,11 +22,11 @@ export class LoginPage {
   private loginErrorString: string;
   private opt: string = 'signin';
 
-  constructor(public navCtrl: NavController,
+  constructor(public menuCtrl: MenuController, public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
-
+    this.menuCtrl.enable(false);
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     })
