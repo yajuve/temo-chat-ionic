@@ -7,12 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>profileFriend</ion-title>
+    <ion-title>{{ profile.fullname }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <img [src]="Util.pathAvatar(friend.avatar)">
 
 </ion-content>

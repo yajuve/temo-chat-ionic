@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HttpProvider} from "../../providers/http/http";
 import {Friend} from "../../models/user";
+import {Util} from "../../providers/util/util";
 
 /**
  * Generated class for the ListFriendsPage page.
@@ -17,6 +18,7 @@ import {Friend} from "../../models/user";
 })
 export class ListFriendsPage {
 
+  public Util = Util;
   private friends: Friend[] = [];
 
   constructor(public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
@@ -32,8 +34,10 @@ export class ListFriendsPage {
     });
   }
 
-  pathAvatar(name: string): string {
-    return './assets/img/avatar/' + name;
+  goToProfileFriend(friend: Friend) {
+    this.navCtrl.push('ProfileFriendPage', {friend});
   }
+
+  
 
 }

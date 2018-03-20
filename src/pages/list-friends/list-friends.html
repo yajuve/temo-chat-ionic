@@ -18,7 +18,7 @@
     <ion-item-sliding *ngFor="let friend of friends">
       <ion-item>
         <ion-avatar item-start>
-          <img [src]="pathAvatar(friend.avatar)">
+          <img [src]="Util.pathAvatar(friend.avatar)">
         </ion-avatar>
         <h2>{{ friend.fullname }}</h2>
       </ion-item>
@@ -33,9 +33,9 @@
         </button>
       </ion-item-options>
       <ion-item-options side="right">
-        <button ion-button color="primary">
-          <ion-icon name="mail"></ion-icon>
-          Email
+        <button ion-button color="primary" (click)="goToProfileFriend(friend)">
+          <ion-icon name="person"></ion-icon>
+          Profile
         </button>
       </ion-item-options>
     </ion-item-sliding>
