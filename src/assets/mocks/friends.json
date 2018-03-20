@@ -1,37 +1,38 @@
 [
   {
-    "username": "Gabriel",
-    "fullname": "Gabriel",
-    "avatar": "Gabriel.png"
+    "username": "Bentley",
+    "fullname": "Bentley",
+    "avatar": "Bentley.png"
   },
   {
-    "username": "Gabriel",
-    "fullname": "Gabriel",
-    "avatar": "Gabriel.png"
-  },
-  {
-    "username": "Gabriel",
-    "fullname": "Gabriel",
-    "avatar": "Gabriel.png"
-  },
-  {
-    "username": "Gabriel",
-    "fullname": "Gabriel",
-    "avatar": "Gabriel.png"
-  },
-  {
-    "username": "Gabriel",
-    "fullname": "Gabriel",
-    "avatar": "Gabriel.png"
-  },
-  {
-    "username": "Gabriel",
-    "fullname": "Gabriel",
-    "avatar": "Gabriel.png"
-  },
-  {
-    "username": "Gabriel",
-    "fullname": "Gabriel",
-    "avatar": "Gabriel.png"
+    "username": "Chloe",
+    "fullname": "Chloe",
+    "avatar": "Chloe.png"
   }
+  {
+    "username": "Dylan",
+    "fullname": "Dylan",
+    "avatar": "Dylan.png"
+  },
+  {
+    "username": "Elliot",
+    "fullname": "Elliot",
+    "avatar": "Elliot.png"
+  },
+  {
+    "username": "Gabriel",
+    "fullname": "Gabriel",
+    "avatar": "Gabriel.png"
+  },
+  {
+    "username": "Grace",
+    "fullname": "Grace",
+    "avatar": "Grace.png"
+  },
+  {
+    "username": "Savannah",
+    "fullname": "Savannah",
+    "avatar": "Savannah.png"
+  }
+
 ]

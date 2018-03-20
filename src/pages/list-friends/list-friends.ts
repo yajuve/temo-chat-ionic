@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HttpProvider} from "../../providers/http/http";
+import {Friend} from "../../models/user";
 
 /**
  * Generated class for the ListFriendsPage page.
@@ -16,16 +17,23 @@ import {HttpProvider} from "../../providers/http/http";
 })
 export class ListFriendsPage {
 
+  private friends: Friend[] = [];
+
   constructor(public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListFriendsPage');
-    this.http.get('friends.json').subscribe((resp) => {
-      console.log(resp);
+    this.http.get('friends.json').subscribe((friends) => {
+      console.log(friends);
+      this.friends = <Friend[]>friends;
     }, (err) => {
       console.error(err);
     });
+  }
+
+  pathAvatar(name: string): string {
+    return './assets/img/avatar/' + name;
   }
 
 }

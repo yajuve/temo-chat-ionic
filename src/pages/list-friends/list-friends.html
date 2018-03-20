@@ -15,12 +15,12 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let friend of friends">
       <ion-item>
         <ion-avatar item-start>
-          <img src="../assets/img/slimer.png">
+          <img [src]="pathAvatar(friend.avatar)">
         </ion-avatar>
-        <h2>Slimer</h2>
+        <h2>{{ friend.fullname }}</h2>
       </ion-item>
       <ion-item-options side="left">
         <button ion-button color="primary">
