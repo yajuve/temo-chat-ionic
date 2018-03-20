@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Util} from "../../providers/util/util";
 import {Friend, User} from "../../models/user";
 import {HttpProvider} from "../../providers/http/http";
+import {forkJoin} from 'rxjs/observable/forkJoin';
 
 /**
  * Generated class for the ChatRoomPage page.
@@ -19,24 +20,30 @@ import {HttpProvider} from "../../providers/http/http";
 export class ChatRoomPage {
 
   public Util = Util;
-  private friend: Friend = new Friend();
-  private myProfile: User = new User();
-  private message: string = '';
+  private friend:Friend = new Friend();
+  private myProfile:User = new User();
+  private messages;
+  private message:string = '';
 
-  constructor(public http:HttpProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
   }
 
   ionViewDidLoad() {
     this.friend = this.navParams.get('friend');
-    this.http.get('my-profile.json').subscribe((profile) => {
-      this.myProfile = <User>profile;
-    }, (err) => {
-      console.error(err);
-    });
+    forkJoin(
+      this.http.get('my-profile.json'),
+      this.http.get('messages.json')
+    )
+      .subscribe(([profile, messages]) => {
+        console.log(messages[this.friend.username]);
+        this.myProfile = <User>profile;
+        this.messages = messages;
+
+      });
   }
 
   doSend() {
-    
+
   }
 
 }
