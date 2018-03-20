@@ -36,6 +36,10 @@ export class ListFriendsPage {
     sliding.close();
     this.navCtrl.push('ProfileFriendPage', {friend});
   }
+  
+  goToChatRoom(friend: Friend) {
+    this.navCtrl.push('ChatRoomPage', {friend});
+  }
 
 
 

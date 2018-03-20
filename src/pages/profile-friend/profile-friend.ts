@@ -28,4 +28,8 @@ export class ProfileFriendPage {
     this.profile = this.navParams.get('friend');
   }
 
+  goToChatRoom() {
+    this.navCtrl.push('ChatRoomPage', {friend: this.profile});
+  }
+
 }

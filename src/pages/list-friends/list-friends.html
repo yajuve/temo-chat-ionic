@@ -16,11 +16,11 @@
 <ion-content padding-top>
   <ion-list>
     <ion-item-sliding #sliding *ngFor="let friend of friends">
-      <ion-item>
+      <ion-item (click)="goToChatRoom(friend)">
         <ion-avatar item-start>
           <img [src]="Util.pathAvatar(friend.avatar)">
         </ion-avatar>
-        <h2>{{ friend.fullname }}</h2>
+        <h2>{{ friend.fullname }} <span ion-text color="light">({{ friend.username }})</span></h2>
       </ion-item>
       <ion-item-options side="left">
         <button ion-button color="primary">

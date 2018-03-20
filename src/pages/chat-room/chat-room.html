@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>chatRoom</ion-title>
+    <ion-title>{{ friend.fullname }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,3 +16,15 @@
 <ion-content padding>
 
 </ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-textarea [(ngModel)]="message" placeholder="Enter your message" name="message"></ion-textarea>
+    <ion-buttons end>
+      <button (click)="doSend()" ion-button icon-only >
+        <ion-icon name="send" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-footer>
