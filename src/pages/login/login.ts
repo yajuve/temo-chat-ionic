@@ -20,6 +20,7 @@ export class LoginPage {
 
   // Our translated text strings
   private loginErrorString: string;
+  private opt: string = 'signin';
 
   constructor(public navCtrl: NavController,
     public user: User,
