@@ -7,12 +7,56 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>myProfile</ion-title>
+    <ion-title>My Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding-top>
 
+  <div text-center>
+    <img class="circle" [src]="Util.pathAvatar(profile.avatar)">
+  </div>
+
+  <form (submit)="doSubmit()">
+    <ion-list>
+
+      <ion-item-divider color="light" text-center> <ion-icon name="information-circle"></ion-icon> Information</ion-item-divider>
+
+      <ion-item>
+        <ion-label stacked>{{ 'Username' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="profile.username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>{{ 'Fullname' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="profile.fullname" name="fullname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="profile.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item-divider color="danger" text-center> <ion-icon name="lock"></ion-icon> Change my Password</ion-item-divider>
+
+      <ion-item>
+        <ion-label stacked>{{ 'Password' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="profile.password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>{{ 'Retape PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="profile.password" name="retry-password"></ion-input>
+      </ion-item>
+
+      <div padding text text-center>
+        <button ion-button color="primary" icon-right>
+          {{ 'BTN.SUBMIT' | translate }} <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </div>
+
+    </ion-list>
+  </form>
 </ion-content>

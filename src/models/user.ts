@@ -2,6 +2,7 @@ export class Friend {
   username: string = '';
   fullname: string = '';
   avatar: string = '';
+  email: string = '';
 }
 
 export class User {
@@ -9,4 +10,5 @@ export class User {
   password: string = '';
   fullname: string = '';
   avatar: string = '';
+  email: string = '';
 }

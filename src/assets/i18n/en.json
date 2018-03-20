@@ -1,4 +1,7 @@
 {
+  "BTN": {
+    "SUBMIT": "SUBMIT"
+  },
   "BACK_BUTTON_TEXT": "Back",
 
   "NAME": "Name",

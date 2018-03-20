@@ -25,19 +25,18 @@ export class ListFriendsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ListFriendsPage');
     this.http.get('friends.json').subscribe((friends) => {
-      console.log(friends);
       this.friends = <Friend[]>friends;
     }, (err) => {
       console.error(err);
     });
   }
 
-  goToProfileFriend(friend: Friend) {
+  goToProfileFriend(sliding, friend: Friend) {
+    sliding.close();
     this.navCtrl.push('ProfileFriendPage', {friend});
   }
 
-  
+
 
 }

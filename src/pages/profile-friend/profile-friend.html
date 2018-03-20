@@ -13,8 +13,21 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding-top>
 
-  <img [src]="Util.pathAvatar(friend.avatar)">
+  <div text-center>
+    <img class="circle" [src]="Util.pathAvatar(profile.avatar)">
+  </div>
+
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light" text-center>Full name</ion-item-divider>
+      <ion-item>{{ profile.fullname }}</ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light" text-center>Username</ion-item-divider>
+      <ion-item>{{ profile.username }}</ion-item>
+    </ion-item-group>
+  </ion-list>
 
 </ion-content>

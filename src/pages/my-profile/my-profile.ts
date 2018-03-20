@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Util} from "../../providers/util/util";
+import {User} from "../../models/user";
+import {HttpProvider} from "../../providers/http/http";
 
 /**
  * Generated class for the MyProfilePage page.
@@ -15,11 +18,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MyProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public Util = Util;
+  private profile: User = new User();
+
+  constructor(public http:HttpProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyProfilePage');
+    this.http.get('my-profile.json').subscribe((profile) => {
+      this.profile = <User>profile;
+    }, (err) => {
+      console.error(err);
+    });
+  }
+
+  doSubmit() {
+    
   }
 
 }

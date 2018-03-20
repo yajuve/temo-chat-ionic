@@ -7,15 +7,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>listFriends</ion-title>
+    <ion-title>My Friends</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding-top>
   <ion-list>
-    <ion-item-sliding *ngFor="let friend of friends">
+    <ion-item-sliding #sliding *ngFor="let friend of friends">
       <ion-item>
         <ion-avatar item-start>
           <img [src]="Util.pathAvatar(friend.avatar)">
@@ -33,7 +33,7 @@
         </button>
       </ion-item-options>
       <ion-item-options side="right">
-        <button ion-button color="primary" (click)="goToProfileFriend(friend)">
+        <button ion-button color="primary" (click)="goToProfileFriend(sliding, friend)">
           <ion-icon name="person"></ion-icon>
           Profile
         </button>
