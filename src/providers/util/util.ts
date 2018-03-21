@@ -12,7 +12,7 @@ export class Util {
   }
 
   static pathAvatar(name: string): string {
-    return './assets/img/avatar/' + name;
+    return './assets/avatar/' + name;
   }
 
 }
