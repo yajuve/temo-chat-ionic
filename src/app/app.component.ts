@@ -16,9 +16,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Friends', component: 'ListFriendsPage' },
-    { title: 'Profile', component: 'MyProfilePage' },
-    { title: 'Logout', component: 'LoginPage' }
+    { icon: 'contacts', title: 'Friends', component: 'ListFriendsPage' },
+    { icon: 'contact', title: 'My Profile', component: 'MyProfilePage' },
+    { icon: 'log-out', title: 'Logout', component: 'LoginPage' }
   ];
 
   constructor(public userProvider: UserProvider, private translate: TranslateService, platform: Platform, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
