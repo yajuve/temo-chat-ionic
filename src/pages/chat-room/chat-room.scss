@@ -1,3 +1,50 @@
 page-chat-room {
 
+  .grid {
+    padding: 0;
+  }
+
+  .sender, .me {
+    .friend-img {
+      position: absolute;
+      border-radius: 40px;
+      width: 40px;
+      height: 40px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.36);
+    }
+    p {
+      border-radius: 5px;
+      margin: 0;
+    }
+  }
+
+
+  .sender {
+    p {
+      text-align: left;
+      background-color: #fff;
+      padding: 12px 10px;
+      border: 1px solid #d1d1d1;
+    }
+    .friend-img {
+      margin: 0 0;
+    }
+  }
+
+
+  .me {
+    .txt {
+      display: inline;
+      text-align: right;
+    }
+    .friend-img {
+      margin: 0 22px;
+    }
+    p {
+      background-color: #306dd8;
+      color: #fff;
+      padding: 12px 10px;
+    }
+  }
+
 }

@@ -10,6 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { Items } from '../mocks/providers/items';
+import { MessageMocks } from '../mocks/messageMocks';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { HttpProvider } from '../providers/http/http';
@@ -50,6 +51,7 @@ export function createTranslateLoader(http: HttpClient) {
     Camera,
     SplashScreen,
     StatusBar,
+    MessageMocks,
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     HttpProvider,

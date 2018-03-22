@@ -4,6 +4,7 @@ import {Util} from "../../providers/util/util";
 import {Friend, User} from "../../models/user";
 import {HttpProvider} from "../../providers/http/http";
 import {forkJoin} from 'rxjs/observable/forkJoin';
+import {MessageMocks} from "../../mocks/messageMocks";
 
 /**
  * Generated class for the ChatRoomPage page.
@@ -25,19 +26,21 @@ export class ChatRoomPage {
   private messages;
   private message:string = '';
 
-  constructor(public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
+  constructor(public msgMocks: MessageMocks, public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
   }
 
   ionViewDidLoad() {
+    this.messages = this.msgMocks.items;
+    console.log(this.messages);
     this.friend = this.navParams.get('friend');
     forkJoin(
       this.http.get('my-profile.json'),
       this.http.get('messages.json')
     )
       .subscribe(([profile, messages]) => {
-        console.log(messages[this.friend.username]);
+        //console.log(messages[this.friend.username]);
         this.myProfile = <User>profile;
-        this.messages = messages;
+        //this.messages = this.msgMocks.items;
 
       });
   }

@@ -15,22 +15,38 @@
 
 <ion-content padding>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        1 of 2
-      </ion-col>
-      <ion-col>
-        2 of 2
-      </ion-col>
-      <ion-col>
-        2 of 2
-      </ion-col>
-      <ion-col>
-        2 of 2
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div class="message-wrap">
+
+    <div *ngFor="let msg of messages">
+
+      <div class="sender" *ngIf="msg.from != 'me'">
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2 text-left>
+              <img class="friend-img" [src]="Util.pathAvatar(msg.hisImg)" alt="" src="">
+            </ion-col>
+            <ion-col col-10>
+              <p>{{msg.content}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="me" *ngIf="msg.from == 'me'">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-10>
+              <p>{{msg.content}}</p>
+            </ion-col>
+            <ion-col col-2>
+              <img class="friend-img" [src]="Util.pathAvatar(msg.myImg)" alt="" src="">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
 
 </ion-content>
 
