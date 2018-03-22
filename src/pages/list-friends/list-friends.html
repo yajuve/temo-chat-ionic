@@ -20,7 +20,7 @@
         <ion-avatar item-start>
           <img [src]="Util.pathAvatar(friend.avatar)">
         </ion-avatar>
-        <h2>{{ friend.fullname }} <span ion-text color="light">({{ friend.username }})</span></h2>
+        <h2>{{ friend.fullname }} <span ion-text color="primary">({{ friend.username }})</span></h2>
       </ion-item>
       <ion-item-options side="right">
         <button ion-button color="primary" (click)="goToProfileFriend(sliding, friend)">
