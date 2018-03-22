@@ -25,24 +25,21 @@ export class ChatRoomPage {
   private myProfile:User = new User();
   private messages;
   private message:string = '';
+  private isLoading: boolean = true;
 
-  constructor(public msgMocks: MessageMocks, public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
+  constructor(public msgMocks:MessageMocks, public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
   }
 
   ionViewDidLoad() {
+    this.isLoading = true;
     this.messages = this.msgMocks.items;
-    console.log(this.messages);
     this.friend = this.navParams.get('friend');
     forkJoin(
-      this.http.get('my-profile.json'),
-      this.http.get('messages.json')
-    )
-      .subscribe(([profile, messages]) => {
-        //console.log(messages[this.friend.username]);
-        this.myProfile = <User>profile;
-        //this.messages = this.msgMocks.items;
-
-      });
+      this.http.get('my-profile.json')
+    ).subscribe(([profile]) => {
+      this.isLoading = false;
+      this.myProfile = <User>profile;
+    });
   }
 
   doSend() {

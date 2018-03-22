@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding *ngIf="!isLoading">
 
   <div class="message-wrap">
 
@@ -24,7 +24,7 @@
         <ion-grid>
           <ion-row>
             <ion-col col-2 text-left>
-              <img class="friend-img" [src]="Util.pathAvatar(msg.hisImg)" alt="" src="">
+              <img class="friend-img" [src]="Util.pathAvatar(friend.avatar)" alt="">
             </ion-col>
             <ion-col col-10>
               <p>{{msg.content}}</p>
@@ -40,7 +40,7 @@
               <p>{{msg.content}}</p>
             </ion-col>
             <ion-col col-2>
-              <img class="friend-img" [src]="Util.pathAvatar(msg.myImg)" alt="" src="">
+              <img class="friend-img" [src]="Util.pathAvatar(myProfile.avatar)" alt="">
             </ion-col>
           </ion-row>
         </ion-grid>
