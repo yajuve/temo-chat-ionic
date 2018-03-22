@@ -37,6 +37,7 @@ export class LoginPage {
   // Attempt to login in through our User service
   doLogin() {
     this.http.get('my-profile.json').subscribe((profile) => {
+      console.log(profile);
       this.userProvider.user = <User>profile;
       this.navCtrl.setRoot('ListFriendsPage');
     }, (err) => {

@@ -1,11 +1,17 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pages {{ userProvider.user.username }}</ion-title>
+      <ion-title>Temo Chat</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
+
+    <div padding text-center>
+      <img id="my-avatar" src="./assets/avatar/Raouf.png">
+      <h4 ion-text color="dark-light">{{ userProvider.user.fullname }}</h4>
+    </div>
+
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon [name]="p.icon"></ion-icon> {{p.title}}
