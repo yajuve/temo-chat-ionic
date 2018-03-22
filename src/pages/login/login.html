@@ -1,20 +1,20 @@
-<ion-header>
+<!--<ion-header>
 
   <ion-navbar>
-    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+    <ion-title>Temo Chat Theme fo Ionic</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header>-->
 
 
-<ion-content>
+<ion-content padding>
 
   <div id="logo" padding text-center>
     <img src="./assets/img/logo.png">
   </div>
 
   <div padding>
-    <ion-segment [(ngModel)]="opt">
+    <ion-segment [(ngModel)]="opt" color="light">
       <ion-segment-button value="signin">
         Sign In
       </ion-segment-button>
@@ -26,71 +26,53 @@
 
   <div [ngSwitch]="opt">
     <form (submit)="doLogin()" *ngSwitchCase="'signin'">
-      <ion-list>
 
-        <ion-item>
-          <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
           <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
-        </ion-item>
 
-        <!--
-        Want to use a Username instead of an Email? Here you go:
 
-        <ion-item>
-          <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
-          <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
-        </ion-item>
-        -->
 
-        <ion-item>
-          <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
           <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
-        </ion-item>
+
 
         <div padding text-center>
-          <button ion-button color="primary" icon-right>
+          <button ion-button round color="light" icon-right>
             {{ 'SIGNIN' | translate }} <ion-icon name="log-in"></ion-icon>
           </button>
         </div>
 
-      </ion-list>
+
     </form>
 
     <form (submit)="doLogin()" *ngSwitchCase="'signup'">
-      <ion-list>
+      <ion-label>{{ 'Username' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
 
-        <ion-item>
-          <ion-label fixed>{{ 'Username' | translate }}</ion-label>
+
+      <ion-label float>{{ 'Fullname' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.fullname" name="fullname"></ion-input>
+
+
+
+          <ion-label float>{{ 'Email' | translate }}</ion-label>
           <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
-        </ion-item>
 
-        <ion-item>
-          <ion-label fixed>{{ 'Fullname' | translate }}</ion-label>
-          <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
-        </ion-item>
 
-        <ion-item>
-          <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-          <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+          <ion-label float>{{ 'Password' | translate }}</ion-label>
           <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
-        </ion-item>
 
-        <ion-item>
-          <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+
+
+          <ion-label float>{{ 'Retry Password' | translate }}</ion-label>
           <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
-        </ion-item>
+
 
         <div padding text-center>
-          <button ion-button color="primary" icon-right>
+          <button ion-button round color="light" icon-right>
             {{ 'SIGNUP' | translate }} <ion-icon name="person-add"></ion-icon>
           </button>
         </div>
 
-      </ion-list>
+
     </form>
 
   </div>

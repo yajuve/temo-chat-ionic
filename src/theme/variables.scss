@@ -27,8 +27,8 @@ $background-color:  #fff;
 $colors: (
   primary:    #306dd8, // 488aff 306dd8
   secondary:  #32db64,
-  danger:     #f53d3d,
-  light: #f7f7f7,
+  danger: #f53d3d,
+  light: (base: #f7f7f7, contrast: #306dd8),
   dark:       #222
 );
 
