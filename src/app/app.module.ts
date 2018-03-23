@@ -11,7 +11,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { Items } from '../mocks/providers/items';
 import { MessageMocks } from '../mocks/messageMocks';
-import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { HttpProvider } from '../providers/http/http';
 import { Util } from '../providers/util/util';
@@ -46,7 +45,6 @@ export function createTranslateLoader(http: HttpClient) {
     MyApp
   ],
   providers: [
-    Api,
     Items,
     Camera,
     SplashScreen,
