@@ -24,7 +24,6 @@ export class ProfileFriendPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfileFriendPage');
     this.profile = this.navParams.get('friend');
   }
 

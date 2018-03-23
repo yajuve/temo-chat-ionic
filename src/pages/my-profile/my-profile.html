@@ -19,7 +19,7 @@
 </ion-header>
 
 
-<ion-content padding-top>
+<ion-content padding-top *ngIf="!isLoading">
 
   <div text-center>
     <img id="my-avatar" [src]="Util.pathAvatar(profile.avatar)">

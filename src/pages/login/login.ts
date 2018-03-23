@@ -26,7 +26,6 @@ export class LoginPage {
   private opt: string = 'signin';
 
   constructor(public http:HttpProvider, public userProvider: UserProvider, public menuCtrl: MenuController, public navCtrl: NavController,
-    public toastCtrl: ToastController,
     public translateService: TranslateService) {
     this.menuCtrl.enable(false);
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
@@ -37,23 +36,11 @@ export class LoginPage {
   // Attempt to login in through our User service
   doLogin() {
     this.http.get('my-profile.json').subscribe((profile) => {
-      console.log(profile);
       this.userProvider.user = <User>profile;
       this.navCtrl.setRoot('ListFriendsPage');
     }, (err) => {
       console.error(err);
     });
 
-    /*this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push('ListFriendsPage');
-    }, (err) => {
-      console.error(err);
-      let toast = this.toastCtrl.create({
-        message: this.loginErrorString,
-        duration: 3000,
-        position: 'top'
-      });
-      toast.present();
-    });*/
   }
 }
