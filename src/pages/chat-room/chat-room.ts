@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Util} from "../../providers/util/util";
 import {Friend, User} from "../../models/user";
@@ -6,6 +6,7 @@ import {HttpProvider} from "../../providers/http/http";
 import {forkJoin} from 'rxjs/observable/forkJoin';
 import {MessageMocks} from "../../mocks/messageMocks";
 import {Message} from "../../models/message";
+import { Content } from 'ionic-angular';
 
 /**
  * Generated class for the ChatRoomPage page.
@@ -21,6 +22,7 @@ import {Message} from "../../models/message";
 })
 export class ChatRoomPage {
 
+  @ViewChild(Content) content: Content;
   public Util = Util;
   private friend:Friend = new Friend();
   private myProfile:User = new User();
@@ -29,6 +31,7 @@ export class ChatRoomPage {
   private isLoading: boolean = true;
 
   constructor(public msgMocks:MessageMocks, public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
+
   }
 
   ionViewDidLoad() {
@@ -43,6 +46,17 @@ export class ChatRoomPage {
     });
   }
 
+  ionViewWillEnter(): void {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom() {
+    setTimeout(() => {
+      this.content.scrollToBottom(300);
+    });
+  }
+
+
   doSend() {
     if(this.input.length > 0) {
       let message: Message = new Message();
@@ -50,6 +64,7 @@ export class ChatRoomPage {
       message.from = 'me';
       message.content = this.input;
       this.msgMocks.add(message);
+      this.scrollToBottom();
       this.input = '';
     }
   }
