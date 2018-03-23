@@ -52,7 +52,7 @@
 
 <ion-footer no-border>
   <ion-toolbar color="primary">
-    <ion-textarea [(ngModel)]="input" placeholder="Enter your message" name="message"></ion-textarea>
+    <ion-textarea (keyup.enter)="doSend()" [(ngModel)]="input" placeholder="Enter your message" name="message"></ion-textarea>
     <ion-buttons end>
       <button (click)="doSend()" ion-button icon-only >
         <ion-icon name="send" color="light"></ion-icon>

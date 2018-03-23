@@ -11,43 +11,73 @@ export class MessageMocks {
       {
         "from": "me",
         "to": "krod",
-        "content": "Helle test",
+        "content": "Hello",
         "time": new Date()
       },
       {
         "from": "krod",
         "to": "me",
-        "content": "Helle test",
+        "content": "Hi how are you ?",
         "time": new Date()
       },
       {
         "from": "me",
         "to": "krod",
-        "content": "Helle test",
+        "content": "Fine",
         "time": new Date()
       },
       {
         "from": "me",
         "to": "krod",
-        "content": "Helle test",
+        "content": "And you ?",
         "time": new Date()
       },
       {
         "from": "krod",
         "to": "me",
-        "content": "Helle test",
+        "content": "Good",
         "time": new Date()
       },
       {
         "from": "me",
         "to": "woods",
-        "content": "Helle test",
+        "content": "Hi",
+        "time": new Date()
+      },
+      {
+        "from": "kay",
+        "to": "me",
+        "content": "Hi",
+        "time": new Date()
+      },
+      {
+        "from": "JTS",
+        "to": "me",
+        "content": "Hi",
+        "time": new Date()
+      },
+      {
+        "from": "harodez",
+        "to": "me",
+        "content": "Hi",
+        "time": new Date()
+      },
+      {
+        "from": "eam",
+        "to": "me",
+        "content": "Hi",
+        "time": new Date()
+      },
+      {
+        "from": "paden",
+        "to": "me",
+        "content": "Hi",
         "time": new Date()
       },
       {
         "from": "woods",
         "to": "me",
-        "content": "Helle test",
+        "content": "Hi",
         "time": new Date()
       }
     ];
