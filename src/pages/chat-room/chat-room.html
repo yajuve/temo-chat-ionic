@@ -19,7 +19,7 @@
 
     <div *ngFor="let msg of messages">
 
-      <div class="sender" *ngIf="msg.from != 'me'">
+      <div class="sender" *ngIf="msg.from == friend.username && msg.to == 'me' ">
 
         <ion-grid>
           <ion-row>
@@ -33,7 +33,7 @@
         </ion-grid>
       </div>
 
-      <div class="me" *ngIf="msg.from == 'me'">
+      <div class="me" *ngIf="msg.from == 'me' && msg.to == friend.username">
         <ion-grid>
           <ion-row>
             <ion-col col-10>
@@ -52,7 +52,7 @@
 
 <ion-footer no-border>
   <ion-toolbar color="primary">
-    <ion-textarea [(ngModel)]="message" placeholder="Enter your message" name="message"></ion-textarea>
+    <ion-textarea [(ngModel)]="input" placeholder="Enter your message" name="message"></ion-textarea>
     <ion-buttons end>
       <button (click)="doSend()" ion-button icon-only >
         <ion-icon name="send" color="light"></ion-icon>

@@ -5,6 +5,7 @@ import {Friend, User} from "../../models/user";
 import {HttpProvider} from "../../providers/http/http";
 import {forkJoin} from 'rxjs/observable/forkJoin';
 import {MessageMocks} from "../../mocks/messageMocks";
+import {Message} from "../../models/message";
 
 /**
  * Generated class for the ChatRoomPage page.
@@ -24,7 +25,7 @@ export class ChatRoomPage {
   private friend:Friend = new Friend();
   private myProfile:User = new User();
   private messages;
-  private message:string = '';
+  private input: string = '';
   private isLoading: boolean = true;
 
   constructor(public msgMocks:MessageMocks, public http:HttpProvider, public navCtrl:NavController, public navParams:NavParams) {
@@ -43,7 +44,14 @@ export class ChatRoomPage {
   }
 
   doSend() {
-
+    if(this.input.length > 0) {
+      let message: Message = new Message();
+      message.to = this.friend.username;
+      message.from = 'me';
+      message.content = this.input;
+      this.msgMocks.add(message);
+      this.input = '';
+    }
   }
 
 }

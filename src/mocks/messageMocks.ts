@@ -10,57 +10,43 @@ export class MessageMocks {
     let items = [
       {
         "from": "me",
-        "myImg": "Raouf.png",
-        "to": "Gabriel",
-        "hisImg": "Gabriel.png",
+        "to": "krod",
         "content": "Helle test",
         "time": new Date()
       },
       {
-        "from": "Gabriel",
-        "myImg": "Raouf.png",
-        "to": "Gabriel",
-        "hisImg": "Gabriel.png",
-        "content": "Helle test",
-        "time": new Date()
-      },
-      {
-        "from": "me",
-        "myImg": "Raouf.png",
-        "to": "Gabriel",
-        "hisImg": "Gabriel.png",
+        "from": "krod",
+        "to": "me",
         "content": "Helle test",
         "time": new Date()
       },
       {
         "from": "me",
-        "myImg": "Raouf.png",
-        "to": "Gabriel",
-        "hisImg": "Gabriel.png",
-        "content": "Helle test",
-        "time": new Date()
-      },
-      {
-        "from": "Gabriel",
-        "myImg": "Raouf.png",
-        "to": "Gabriel",
-        "hisImg": "Gabriel.png",
+        "to": "krod",
         "content": "Helle test",
         "time": new Date()
       },
       {
         "from": "me",
-        "myImg": "Raouf.png",
-        "to": "Gabriel",
-        "hisImg": "Gabriel.png",
+        "to": "krod",
+        "content": "Helle test",
+        "time": new Date()
+      },
+      {
+        "from": "krod",
+        "to": "me",
         "content": "Helle test",
         "time": new Date()
       },
       {
         "from": "me",
-        "myImg": "Raouf.png",
-        "to": "Gabriel",
-        "hisImg": "Gabriel.png",
+        "to": "woods",
+        "content": "Helle test",
+        "time": new Date()
+      },
+      {
+        "from": "woods",
+        "to": "me",
         "content": "Helle test",
         "time": new Date()
       }
