@@ -16,6 +16,12 @@ import {Util} from "../../providers/util/util";
   selector: 'page-list-friends',
   templateUrl: 'list-friends.html',
 })
+
+/**
+ * @author: KMR
+ * @email: yajuve.25.dz@gmail.com
+ */
+
 export class ListFriendsPage {
 
   public Util = Util;

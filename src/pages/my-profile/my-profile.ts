@@ -16,6 +16,12 @@ import {HttpProvider} from "../../providers/http/http";
   selector: 'page-my-profile',
   templateUrl: 'my-profile.html',
 })
+
+/**
+ * @author: KMR
+ * @email: yajuve.25.dz@gmail.com
+ */
+
 export class MyProfilePage {
 
   public Util = Util;

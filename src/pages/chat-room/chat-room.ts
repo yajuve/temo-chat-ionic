@@ -20,6 +20,12 @@ import { Content } from 'ionic-angular';
   selector: 'page-chat-room',
   templateUrl: 'chat-room.html',
 })
+
+/**
+ * @author: KMR
+ * @email: yajuve.25.dz@gmail.com
+ */
+
 export class ChatRoomPage {
 
   @ViewChild(Content) content: Content;

@@ -1,8 +1,8 @@
 {
   "name": "temoChat",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "version": "1.0",
+  "author": "KMR",
+  "homepage": "",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -37,5 +37,5 @@
     "@ionic/app-scripts": "3.1.0",
     "typescript": "2.4.2"
   },
-  "description": "An Ionic project"
+  "description": "Theme for ionic project"
 }

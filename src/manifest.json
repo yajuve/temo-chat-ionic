@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "TemoChat",
+  "short_name": "TemoChat",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{

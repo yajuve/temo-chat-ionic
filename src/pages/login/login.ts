@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, MenuController } from 'ionic-angular';
 import {UserProvider} from "../../providers/user/user";
 import {HttpProvider} from "../../providers/http/http";
 import {User} from "../../models/user";
@@ -10,6 +10,12 @@ import {User} from "../../models/user";
   selector: 'page-login',
   templateUrl: 'login.html'
 })
+
+/**
+ * @author: KMR
+ * @email: yajuve.25.dz@gmail.com
+ */
+
 export class LoginPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
