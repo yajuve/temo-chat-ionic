@@ -1,25 +1,41 @@
-### Temo Chat for Ionic 2
-Theme for ionic 2
+### Temo Chat Theme for Ionic 2
+A free theme for your application mobile build with ionic for **Chat Application**
 ### Pages
-* Login
+* Login (Sign in + sign up)
 * Chat room
-* List friends
+* List of friends
 * My Profile
 * Profile friend
 
-### How to run ?
+### Demo
+To see a screenshot of theme you can show them on ionic market : [Here](https://market.ionicframework.com/themes/temo-chat)
+
+### Features
+
+* i18n
+* Language available (English)
+* Api RESTful 
+* Color theme (Blue)
+* Customizable
+
+
+### How to use ?
 You need npm and ionic installed
 * 1- Download or clone this repo
+if you have git installed you can use
+ ```shell
+ git clone https://github.com/yajuve/temo-chat-ionic.git
+  ```
 
-* 2- In folder of project run
+* 2- Go inside project and run (to install all dependencies)
  ```shell
  npm install
   ```
-* 3 Run ionic 
+* 3 Run ionic (To lunch an application)
  ```shell
  ionic serve
   ```
-  The new tab in your favorite navigator will open
+  You are done, the new tab in your favorite navigator will open
   
  * 4 Enjoy
  
