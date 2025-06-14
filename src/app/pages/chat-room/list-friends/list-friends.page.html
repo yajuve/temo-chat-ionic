@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Friends</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">list-friends</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item-sliding #sliding *ngFor="let friend of friends">
+      <ion-item (click)="goToChatRoom(friend)">
+        <ion-avatar slot="start">
+          <img [src]="Util.pathAvatar(friend.avatar)">
+        </ion-avatar>
+        <h3>{{ friend.fullname }} <ion-text color="primary">({{ friend.username }})</ion-text></h3>
+      </ion-item>
+      <ion-item-options side="end">
+        <button ion-button color="primary" (click)="goToFriendProfile(friend)">
+          <ion-icon slot="start" name="person"></ion-icon>
+          Profile
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
