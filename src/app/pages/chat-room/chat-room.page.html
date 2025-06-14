@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ friend?.fullname }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">chat-room</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="message-wrap">
+
+    <div *ngFor="let msg of messages">
+
+      <div class="sender" *ngIf="msg.from === username && msg.to === 'me' ">
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">
+              <img *ngIf="friend" class="friend-img" alt="" [src]="Util.pathAvatar(friend.avatar)">
+            </ion-col>
+            <ion-col size="10">
+              <p>{{msg.content}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="me" *ngIf="msg.from === 'me' && msg.to === username">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="10">
+              <p>{{msg.content}}</p>
+            </ion-col>
+            <ion-col size="2">
+              <img *ngIf="friend" class="friend-img" alt="" [src]="Util.pathAvatar(myProfile.avatar)">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-textarea (keyup.enter)="doSend()" [(ngModel)]="input" placeholder="Enter your message"></ion-textarea>
+    <ion-buttons slot="end">
+      <ion-button (click)="doSend()" ion-button icon-only>
+        <ion-icon name="send" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
