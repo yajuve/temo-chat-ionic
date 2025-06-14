@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My-profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">My profile </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div text-center>
+    <img id="my-avatar" [src]="Util.pathAvatar(profile.avatar)">
+  </div>
+
+  <form (submit)="doSubmit()">
+    <ion-list>
+
+      <ion-item-divider color="light" text-center> <ion-icon name="information-circle"></ion-icon>
+        Information</ion-item-divider>
+
+      <ion-item>
+
+        <ion-input label="Username" labelPlacement="stacked" [(ngModel)]="profile.username" name="username"
+          ngDefaultControl></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Fullname" labelPlacement="floating" [(ngModel)]="profile.fullname" name="fullname"
+          ngDefaultControl></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Email" [(ngModel)]="profile.email" name="email" ngDefaultControl></ion-input>
+      </ion-item>
+
+      <ion-item-divider color="danger" text-center> <ion-icon name="lock-closed"></ion-icon> Change my
+        Password</ion-item-divider>
+
+      <ion-item>
+        <ion-input label="Password" type="password" [(ngModel)]="profile.password" name="password"
+          ngDefaultControl></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Retype password" type="password" [(ngModel)]="profile.password" name="retype-password"
+          ngDefaultControl></ion-input>
+      </ion-item>
+
+      <div padding text text-center>
+        <ion-button ion-button color="primary" icon-right>
+          SUBMIT <ion-icon name="checkmark"></ion-icon>
+        </ion-button>
+      </div>
+
+    </ion-list>
+  </form>
+
+</ion-content>
