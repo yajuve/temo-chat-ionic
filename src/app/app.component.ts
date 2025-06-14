@@ -1,66 +1,32 @@
-import { Component, ViewChild } from '@angular/core';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-import { TranslateService } from '@ngx-translate/core';
-import { Config, Nav, Platform } from 'ionic-angular';
 
-import { FirstRunPage } from '../pages/pages';
-import {UserProvider} from "../providers/user/user";
+import { Component } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, heart, logIn, personAdd, person, send, people, peopleOutline, peopleSharp, personOutline, personSharp, checkmark, informationCircle, lockOpen, lockClosed, logOut, logOutSharp, logOutOutline, chatbox } from 'ionicons/icons';
+import { filter } from 'rxjs';
 
 @Component({
-  templateUrl: 'main.html'
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+  imports: [IonLabel, RouterLink, RouterLinkActive, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterLink, IonRouterOutlet],
 })
-export class MyApp {
-  rootPage = FirstRunPage;
-
-  @ViewChild(Nav) nav: Nav;
-
-  pages: any[] = [
-    { icon: 'contacts', title: 'Friends', component: 'ListFriendsPage' },
-    { icon: 'contact', title: 'My Profile', component: 'MyProfilePage' },
-    { icon: 'log-out', title: 'Logout', component: 'LoginPage' }
+export class AppComponent {
+  public menuDisabled: boolean = true;
+  public appPages = [
+    { title: 'My friends', url: '/list-friends', icon: 'people' },
+    { title: 'My profile', url: '/my-profile', icon: 'person' },
+    { title: 'Logout', url: '/login', icon: 'log-out' },
   ];
-
-  constructor(public userProvider: UserProvider, private translate: TranslateService, platform: Platform, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-    this.initTranslate();
-  }
-
-  initTranslate() {
-    // Set the default language for translation strings, and the current language.
-    this.translate.setDefaultLang('en');
-    const browserLang = this.translate.getBrowserLang();
-
-    if (browserLang) {
-      if (browserLang === 'zh') {
-        const browserCultureLang = this.translate.getBrowserCultureLang();
-
-        if (browserCultureLang.match(/-CN|CHS|Hans/i)) {
-          this.translate.use('zh-cmn-Hans');
-        } else if (browserCultureLang.match(/-TW|CHT|Hant/i)) {
-          this.translate.use('zh-cmn-Hant');
-        }
+  constructor(private router: Router) {
+    addIcons({ chatbox, logOutSharp, logOutOutline, informationCircle, lockClosed, checkmark, personOutline, personSharp, peopleOutline, peopleSharp, send, person, logIn, personAdd, heart, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
+    this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe((e: NavigationEnd) => {
+      if (e.url === '/login') {
+        this.menuDisabled = true;
       } else {
-        this.translate.use(this.translate.getBrowserLang());
+        this.menuDisabled = false;
       }
-    }
-    else {
-      this.translate.use('en'); // Set your language here
-    }
-
-    this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
-      this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
     });
-  }
-
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
   }
 }
