@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { Message } from '../models/message';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MessageMocks {
   public items: Message[] = [];
 
@@ -87,23 +89,35 @@ export class MessageMocks {
     }
   }
 
-  query(params?: any) {
-    if (!params) {
-      return this.items;
-    }
 
-    return this.items.filter((item) => {
-      for (let key in params) {
-        let field = item[key];
-        if (typeof field == 'string' && field.toLowerCase().indexOf(params[key].toLowerCase()) >= 0) {
-          return item;
-        } else if (field == params[key]) {
-          return item;
-        }
-      }
-      return null;
-    });
+  public getByUsername(username: string) {
+    return this.items.filter(message => {
+      return message.from === username || message.to === username;
+    })
   }
+
+
+  // var result = jsObjects.filter(obj => {
+  //   return obj.b === 6
+  // })
+
+  // query(params?: any) {
+  //   if (!params) {
+  //     return this.items;
+  //   }
+  //   let key: "from" | "to" | 'content' | 'time';
+  //   return this.items.filter((item) => {
+  //     for (key in params) {
+  //       let field = item[key];
+  //       if (typeof field == 'string' && field.toLowerCase().indexOf(params[key].toLowerCase()) >= 0) {
+  //         return item;
+  //       } else if (field == params[key]) {
+  //         return item;
+  //       }
+  //     }
+  //     return null;
+  //   });
+  // }
 
   add(item: Message) {
     this.items.push(item);

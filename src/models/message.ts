@@ -2,5 +2,5 @@ export class Message {
   from: string = '';
   to: string = '';
   content: string = '';
-  time: Date;
+  time: Date = new Date();
 }
