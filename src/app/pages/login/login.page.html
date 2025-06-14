@@ -1,0 +1,153 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-segment color="warning">
+      <ion-segment-button value="first" content-id="first">
+        <ion-label>sing-In</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="second" content-id="second">
+        <ion-label>Sign-Up</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="login-page" class="ion-padding">
+
+  <div id="logo">
+    <img src="./assets/img/logo.png">
+  </div>
+
+
+
+  <ion-segment-view>
+    <ion-segment-content id="first">
+
+      <form (submit)="doLogin()">
+        <ion-item>
+          <ion-input label="Email" type="email" [(ngModel)]="account.email" name="email" placeholder="Type your email"
+            ngDefaultControl></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Password" type="password" [(ngModel)]="account.password" name="password"
+            placeholder="Type your password" ngDefaultControl></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-button type="submit" color="light" icon-right aria-label="login">
+            SIGNIN <ion-icon slot="end" name="log-in" aria-hidden="true"></ion-icon>
+          </ion-button>
+       </ion-item>
+
+
+      </form>
+    </ion-segment-content>
+    <ion-segment-content id="second">
+      <form (submit)="doLogin()">
+        <ion-label>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="account.username" name="username" ngDefaultControl></ion-input>
+
+
+        <ion-label float>Fullname</ion-label>
+        <ion-input type="text" [(ngModel)]="account.fullname" name="fullname" ngDefaultControl></ion-input>
+
+
+
+        <ion-label float>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email" ngDefaultControl></ion-input>
+
+
+        <ion-label float>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password" ngDefaultControl></ion-input>
+
+
+
+        <ion-label float>Re-type Password</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password" ngDefaultControl></ion-input>
+
+
+        <div padding text-center>
+          <ion-button round color="light" icon-right type="submit">
+            SIGNUP <ion-icon slot="end" name="person-add"></ion-icon>
+          </ion-button>
+        </div>
+
+
+      </form>
+    </ion-segment-content>
+  </ion-segment-view>
+
+  <!-- <div padding>
+    <ion-segment [(ngModel)]="opt" color="light">
+      <ion-segment-button value="signin">
+        Sign In
+      </ion-segment-button>
+      <ion-segment-button value="signup">
+        Sign Up
+      </ion-segment-button>
+    </ion-segment>
+  </div> -->
+
+
+  <!-- 
+  <div [ngSwitch]="opt">
+    <form (submit)="doLogin()" *ngSwitchCase="'signin'">
+
+      <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+
+
+
+      <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+
+
+      <div padding text-center>
+        <button ion-button round color="light" icon-right>
+          {{ 'SIGNIN' | translate }} <ion-icon name="log-in"></ion-icon>
+        </button>
+      </div>
+
+
+    </form>
+
+    <form (submit)="doLogin()" *ngSwitchCase="'signup'">
+      <ion-label>{{ 'Username' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+
+
+      <ion-label float>{{ 'Fullname' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="account.fullname" name="fullname"></ion-input>
+
+
+
+      <ion-label float>{{ 'Email' | translate }}</ion-label>
+      <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+
+
+      <ion-label float>{{ 'Password' | translate }}</ion-label>
+      <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+
+
+
+      <ion-label float>{{ 'Retry Password' | translate }}</ion-label>
+      <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+
+
+      <div padding text-center>
+        <button ion-button round color="light" icon-right>
+          {{ 'SIGNUP' | translate }} <ion-icon name="person-add"></ion-icon>
+        </button>
+      </div>
+
+
+    </form>
+
+  </div> -->
+
+</ion-content>

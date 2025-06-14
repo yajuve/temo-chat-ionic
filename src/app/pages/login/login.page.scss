@@ -1,0 +1,32 @@
+#login-page {
+    --background: transparent;
+    background: var(--ion-color-primary);
+}
+
+div#logo {
+    margin-top: 25px;
+    margin-bottom: 12px;
+    width: 50%;
+    margin: auto;
+}
+
+.item {
+    background-color: var(--ion-color-primary);
+}
+
+ion-label {
+    // color: color($colors, light);
+    text-align: center;
+    margin: 0;
+}
+
+.label {
+    margin: 0 0 5px 0;
+}
+
+ion-input {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0 0 25px 0;
+    padding: 10px;
+}
