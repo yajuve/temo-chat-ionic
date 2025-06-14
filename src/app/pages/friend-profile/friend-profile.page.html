@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Friend profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToChatRoom()" icon-only>
+        <ion-icon name="chatbox"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">friend-profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div text-center>
+    <img id="friend-avatar" *ngIf="profile" [src]="Util.pathAvatar(profile.avatar)">
+  </div>
+
+  <ion-list *ngIf="profile">
+    <ion-item-group>
+      <ion-item-divider color="light" text-center>Full name</ion-item-divider>
+      <ion-item>{{ profile.fullname }}</ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light" text-center>Username</ion-item-divider>
+      <ion-item>{{ profile.username }}</ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>
